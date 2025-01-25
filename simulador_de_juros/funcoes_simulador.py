@@ -1,3 +1,4 @@
+from math import pow
 def juros_composto(capital, juros, tempo):
     'retorna o valor final de investimento (já incluído o juros)'
     montante_composto = capital*pow((1+juros), tempo)
@@ -13,10 +14,10 @@ def capital():
     return float(input('Digite o capital: R$ '))
 
 def juros():
-    return float(input('Digite o juros anual em porcentagem (%): '))
+    return float(input('Digite o juros anual em porcentagem (%): ')) / 100
 
 def tempo():
-    return int(input('Digite quantos meses será o investimento: '))
+    return int(input('Digite quantos meses será o investimento: ')) / 12
 
 def menu():
     return int(input('''Escolha uma das opções abaixo:
