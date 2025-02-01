@@ -7,11 +7,18 @@ print('''\nCotação do dólar: R$ 1.00 = US$ 5.85
 Cotação do euro: R$ 1.00 = EUR 6.40''')
 resposta = 'S'
 while resposta == 'S':
-    print('''\nEscolha uma das opções abaixo\n
+    try:
+        print('''\nEscolha uma das opções abaixo\n
     1: Real - Dólar
     2: Dólar - Real
     3: Real - Euro
     4: Euro - Real\n''')
-    menu()
-    resposta = input('\nDeseja continuar? ').upper()
-print('Volte sempre!')
+        menu()
+        resposta = input('\nDeseja continuar? (S/N) ').upper()
+        while resposta != 'S' and resposta != 'N':
+            resposta = input('\nOpção inválida! Digite S ou N: ').upper()
+    except ValueError:
+        print('\nOpção inválida! Digite um valor numérico.')
+    except TypeError:
+        print('\nOpção inválida! Digite um valor numérico.')
+print('\nVolte sempre!')

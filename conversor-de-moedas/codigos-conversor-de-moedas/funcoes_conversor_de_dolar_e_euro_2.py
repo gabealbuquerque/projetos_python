@@ -7,6 +7,8 @@ def msg(texto):
 def menu():
     '''Retorna a conversão da moeda de acordo com a opção escolhida'''
     opcao = int(input('Qual a sua escolha? '))
+    while opcao != 1 and opcao != 2 and opcao != 3 and opcao != 4:
+        opcao = int(input('\nOpção inválida! Tente novamente: '))
     if opcao == 1:
         real = float(input('\nQuantos reais você tem para converter em dólar? R$ '))
         print(f'\nR$ {real:.2f} equivale a US$ {real * 0.17:.2f}')
@@ -19,5 +21,3 @@ def menu():
     elif opcao == 4:
         euro = float(input('\nQuantos euros você tem para converter em real? EUR '))
         print(f'\nEUR {euro:.2f} equivale a R$ {euro * 6.40:.2f}')
-    else:
-        print('Opção inválida!')
