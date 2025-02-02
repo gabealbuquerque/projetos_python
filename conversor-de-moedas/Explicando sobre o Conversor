@@ -1,9 +1,0 @@
-Prezado(a), o conversor de moedas foi feito com o intuito de realizar a conversão do real para o dólar e euro.
-No programa, utilizei estruturas de decisão composta, loops, levantamento e tratamento de erro.
-O programa mostra ao usuário o menu contendo 4 opções. Caso o usuário digite algo diferente (um número fora do intervalo de 1 à 4, uma letra ou espaço) o programa entrará em loop
-mostrando uma mensagem de erro, solicitando novamente a opção desejada. O programa so sairá do loop caso o usuário digite uma opção válida.
-Após isso, o programa fará a devida conversão e perguntará se o usuário deseja continuar. Se o mesmo
-digitar algo diferente de S ou N, o programa novamente entrará em um outro loop, mostrando mensagem de erro e solicitando novamente a opção desejada. Ao final, o programa exibe na tela
-um agradecimento. Espero que goste! 
-Cordialmente,
-Gabriel de A. Vasconcelos.
