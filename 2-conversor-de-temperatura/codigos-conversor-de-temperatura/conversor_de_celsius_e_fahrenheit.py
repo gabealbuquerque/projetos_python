@@ -7,9 +7,9 @@ while resposta == 'S':
         menu()
         resposta = input('\nDeseja continuar? (S/N) ').upper()
         while resposta != 'S' and resposta != 'N':
-            resposta = input('Opção inválida! Digite S ou N: ').upper()
+            resposta = input('\nOpção inválida! Digite S ou N: ').upper()
     except ValueError:
         print('\nOpção inválida! Digite um valor numérico.')
     except TypeError:
         print('\nOpção inválida! Digite um valor numérico.')
-print('Obrigado e volte sempre!')
+print('\nObrigado e volte sempre!')
