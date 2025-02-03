@@ -1,0 +1,8 @@
+Prezado(a), o projeto Calculadora consiste em um programa que possui 4 opções: 1: soma, 2: subtração, 3: multiplicação e 4: divisão.
+Caso o usuário digite algo fora desse intervalo ou um valor não numérico (como letra ou espaço vazio) o programa entrará em loop solicitando um novo valor.
+Se o usuário digitar um valor válido (entre 1 e 4), o programa seguirá e solicitará o 1º valor a ser calculado. Após isso o 2º valor e depois será
+efetuado o cálculo. Apesar disso, se um dos números forem 0, o programa entrará em loop e solicitará um novo valor, pois não faz sentido realizar qualquer
+cálculo que seja por 0. O programa está em float, por tanto o resultado será em valor decimal. No final do programa o usuário deverá digitar S se quiser 
+realizar mais um cálculo, e N caso deseje sair. Se for digitado algo além disso, entrará novamente em loop e solicitará um novo valor (S ou N).
+Espero que goste! Cordialmente,
+Gabriel de A. Vasconcelos.
