@@ -3,15 +3,39 @@ def texto(msg):
     print('{:^40}'.format(msg))
     print('-_' * len(msg))
     print('''\nEscolha uma das opções abaixo:\n
+1: Comprimento / Tempo / Velocidade / Área
+2: Massa / IMC
+3: Temperatura / Líquido
+4: Moeda / Calculadora
+5: Nota simples / Tabuada''')
+
+def menu1():
+  print('''\nDigite uma das opções abaixo: \n
 1: Comprimento
-2: Massa
-3: Tempo
-4: Área
-5: Velocidade
-6: Temperatura
-7: Moeda
-8: Líquido
-    ''')
+2: Tempo
+3: Velocidade
+4: Área ''')
+
+def menu2():
+  print('''\nDigite uma das opções abaixo: \n
+1: Massa
+2: IMC''')
+
+def menu3():
+  print('''\nDigite uma das opções abaixo: \n
+1: Temperatura
+2: Líquido''')
+  
+def menu4():
+  print('''\nDigite uma das opções abaixo: \n
+1: Moeda
+2: Calculadora''')
+  
+def menu5():
+  print('''\nDigite uma das opções abaixo: \n
+1: Nota simples
+2: Tabuada  
+''')
 
 def comprimento():
   print('''\nDigite uma das opções abaixo:\n
@@ -71,13 +95,13 @@ def area():
   metros = float(input('\nDigite quantos metros quadrados você gostaria de converter para centímetros: (m²) '))
   while metros <= 0:
     metros = float(input('\nErro: não é possível converter metros negativos. Digite novamente: (m²) '))
-  print(f'\n{metros} (m²) é igual a {metros * 10000} (cm²) \n')
+  print(f'\n{metros:.2f} (m²) é igual a {metros * 10000:.2f} (cm²) \n')
 
 def velocidade():
   km = float(input('\nDigite quantos quilometros por hora você gostaria de converter para metros por segundo: (km/h)'))
   while km <= 0:
     km = float(input('\nErro: não é possível converter quilometros por hora negativo. Digite novamente: (km/h) '))
-  print(f'\n{km} (km/h) é igual a {km / 3.6} (m/s) \n')
+  print(f'\n{km:.2f} (km/h) é igual a {km / 3.6:.2f} (m/s) \n')
   
 def temperatura():
   print('''\nDigite uma das opções abaixo:\n
@@ -147,3 +171,88 @@ def liquido():
     while mililitros <= 0:
       mililitros = float(input('\nErro: não é possível converter mililitro negativo. Digite novamente: '))
     print(f'\n{mililitros:.2f} (ml) é igual a {mililitros/1000:.2f} (l) \n')
+  
+def imc():
+  print('''\nEis as faixas de IMC: \n
+- Abaixo de 18,5: Abaixo do peso
+- Entre 18,5 e 24,9: Peso normal
+- Entre 25,0 e 29,0: Sobrepeso
+- Entre 30,0 e 34,9: Obesidade grau 1
+- Entre 35,0 e 39,9: Obesidade grau 2
+- Acima de 4,0: Obesidade grau 3 (mórbida)''')
+  peso = float(input('\nDigite o seu peso: (kg) '))
+  while peso <= 0:
+    peso = float(input('\nErro: não é possível calcular o imc de peso negativo. Digite novamente: '))
+  altura = float(input('\nDigite a sua altura: (m) '))
+  while altura <= 0 and altura > 2.50:
+    altura = float(input('\nErro: digite novamente: '))
+  imc = peso / (altura ** 2)
+  if imc < 18.5:
+    print(f'\nSeu IMC é: {imc:.2f} e você está abaixo do peso!')
+  elif imc >= 18.5 and imc <= 24.9:
+    print(f'\nSeu IMC é: {imc:.2f} e você está com o peso normal!')
+  elif imc >= 25 and imc <= 29.9:
+    print(f'\nSeu IM é: {imc:.2f} e você está com sobrepeso!')
+  elif imc >= 30 and imc <= 34.9:
+    print(f'\nSeu IMC é: {imc:.2f} e você está com obesidade grau 1!')
+  elif imc >= 35 and imc <= 39.9:
+    print(f'\nSeu IMC é: {imc:.2f} e você está com obesidade grau 2!')
+  elif imc >= 40:
+    print(f'\nSeu IMC é: {imc:.2f} e você está com obesidade grau 3 (mórbida)!')
+def calculadora():
+  print('''\nEscolha uma das opções abaixo:\n
+1 - Soma
+2 - Subtração
+3 - Multiplicação
+4 - Divisão''')
+  opcao = int(input('\nDigite uma opção: '))
+  while opcao != 1 and opcao != 2 and opcao != 3 and opcao != 4:
+    opcao = int(input('\nErro: digite novamente: '))
+  num1 = float(input('\nDigite o 1º número: '))
+  while num1 == 0:
+    num1 = int(input('\nNão é possível fazer cálculos com 0. Digite outro número: '))
+  num2 = float(input('\nDigite o 2º número: '))
+  while num2 == 0:
+    num2 = int(input('\nNão é possível fazer cálculos com 0. Digite outro número: '))
+  if opcao == 1:
+    print(f'\n{num1} + {num2} = {num1 + num2:.2f}')
+  elif opcao == 2:
+    print(f'\n{num1} - {num2} = {num1 - num2:.2f}')
+  elif opcao == 3:
+    print(f'\n{num1} x {num2} = {num1 * num2:.2f}')
+  elif opcao == 4:
+    print(f'\n{num1} / {num2} = {num1 / num2:.2f}')
+
+def notas():
+    nome = input('\nDigite o nome do aluno: ')
+    while nome == '' :
+        nome = input('\nErro: digite um nome: ')
+    nota1 = float(input('\nDigite a 1ª nota: '))
+    while nota1 > 10 or nota1 < 0:
+        nota1 = float(input('\nErro: não é possível uma nota ter esse valor. Digite novamente: '))
+    nota2 = float(input('\nDigite a 2ª nota: '))
+    while nota2 > 10 or nota2 < 0:
+        nota2 = float(input('\nErro: não é possível uma nota ter esse valor. Digite novamente: '))
+    nota3 = float(input('\nDigite a 3ª nota: '))
+    while nota3 > 10 or nota3 < 0:
+        nota3 = float(input('\nErro: não é possível uma nota ter esse valor. Digite novamente: '))
+    media = ((nota1 + nota2 + nota3) / 3)
+    media_nota(nome, media)
+
+def media_nota(nome, media):
+    if media >= 6:
+        print(f'\nO aluno {nome} foi aprovado com média final: {media:.2f}!')
+    else:
+        pontos = 6 - media
+        print(f'\nO aluno {nome} foi reprovado com média final: {media:.2f} e precisou de {pontos:.2f} para passar.')
+  
+def tabuada():
+  num = int(input('\nDigite um número para ver sua tabuada: '))
+  while num == 0:
+    num = int(input('\nErro: não há tabuada do zero. Digite um outro número: '))
+  limite = int(input('\nDigite até que número você gostaria de ver a tabuada: '))
+  print('\n')
+  i = 0
+  while i <= limite:
+    print(f'{num} x {i} = {num * i}')
+    i += 1
